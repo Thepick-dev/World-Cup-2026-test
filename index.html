@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Cup Prediction Game - Home</title>
+  <title>Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,20 +18,19 @@
   </nav>
 </header>
 
-<div class="banner">
+<div class="banner" role="img" aria-label="Banner">
+  <!-- image kept for accessibility and mobile; hidden on desktop by CSS -->
   <img src="assets/banner.png" alt="Banner">
 </div>
 
-<h1>World Cup Prediction Game</h1>
-
-<div class="hero">
-  <p>Let’s be havin’ you.</p>
-
-  <a href="predict.html" class="start-box">
-    <div class="start-fill"></div>
-    <div class="start-inner">START<br>PREDICTING</div>
-  </a>
-</div>
+<main class="container">
+  <div class="hero">
+    <a href="predict.html" class="start-box" aria-label="Start Predicting">
+      <div class="start-fill" aria-hidden="true"></div>
+      <div class="start-inner">START<br>PREDICTING</div>
+    </a>
+  </div>
+</main>
 
 </body>
 </html>
