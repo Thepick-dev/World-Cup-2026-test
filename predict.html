@@ -1,201 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>WORLD CUP 2026 — Predict</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --white:#ffffff;
-    --deep:#061327;
-    --usa-blue:#0b66ff;
-    --usa-red:#d62839;
-    --muted:#6b7280;
-    --card:#fbfdff;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:linear-gradient(180deg,#fff,#f6f9ff);color:var(--deep);-webkit-font-smoothing:antialiased}
-  header{position:sticky;top:0;padding:12px 16px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,251,255,0.85));border-bottom:4px solid rgba(11,102,255,0.06);z-index:60}
-  .navgrid{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:10px}
-  .pixel{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--usa-blue),var(--usa-red));display:grid;place-items:center;color:white;font-family:'Press Start 2P'}
-  nav.desktop{display:flex;gap:8px}
-  nav.desktop a{padding:8px 12px;text-decoration:none;border-radius:10px;font-weight:800;color:var(--deep)}
-  nav.desktop a.active{background:linear-gradient(90deg,var(--usa-blue),var(--usa-red));color:white}
-
-  main{max-width:1100px;margin:20px auto;padding:18px}
-  .panel{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(11,102,255,0.06);box-shadow:0 18px 40px rgba(11,102,255,0.06)}
-  h1{font-family:'Press Start 2P',monospace;font-size:20px;margin:0}
-  .muted{color:var(--muted);font-size:13px;margin-top:8px}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-  .sticker, .team{background:white;border-radius:10px;padding:12px;border:1px solid rgba(11,102,255,0.04);text-align:center;cursor:pointer;transition:transform .12s, box-shadow .12s}
-  .sticker.selected{box-shadow:0 14px 40px rgba(214,40,57,0.08);transform:translateY(-6px)}
-  .team.selected{box-shadow:0 14px 40px rgba(11,102,255,0.08);transform:translateY(-6px)}
-
-  .actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-  .btn{padding:10px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:800}
-  .btn.primary{background:linear-gradient(90deg,var(--usa-blue),var(--usa-red));color:white}
-  .btn.ghost{background:transparent;border:1px solid rgba(11,102,255,0.06)}
-
-  .album-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-  .album-card{width:96px;border-radius:8px;padding:10px;background:white;border:1px solid rgba(11,102,255,0.04);text-align:center}
-
-  .note{font-size:13px;color:var(--muted);margin-top:10px}
-
-  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:520px){ .grid{grid-template-columns:repeat(1,1fr)} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="navgrid">
-    <div class="brand">
-      <div class="pixel">RJ</div>
-      <div>
-        <div style="font-family:'Press Start 2P',monospace;font-size:12px;color:var(--deep)">RetroJoy</div>
-        <div style="font-size:11px;color:var(--muted)">WORLD CUP 2026</div>
-      </div>
-    </div>
 
-    <nav class="desktop" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="predict.html" class="active">Predict</a>
-      <a href="table.html">Table</a>
-      <a href="rules.html">Rules</a>
-      <a href="shop.html">Shop</a>
-    </nav>
-  </div>
+<header>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="predict.html" class="active">Predict</a>
+    <a href="standings.html">Standings</a>
+    <a href="rules.html">Rules</a>
+  </nav>
 </header>
 
-<main>
-  <div class="panel" role="region" aria-label="Prediction demo">
-    <h1>Predict — Demo</h1>
-    <p class="muted">Choose up to <strong>3 stickers</strong> and <strong>3 teams</strong>. Picks are stored locally in this demo and show animated feedback — this is how the real flow will feel.</p>
+<div class="banner">
+  <img src="assets/banner.png" alt="Banner">
+</div>
 
-    <div style="margin-top:12px;font-weight:800">Pick 3 Stickers</div>
-    <div class="grid" id="stickers"></div>
+<h1>Predict</h1>
+<p style="text-align:center;margin-top:40px;">Coming Soon</p>
 
-    <div style="margin-top:14px;font-weight:800">Pick 3 Teams</div>
-    <div class="grid" id="teams"></div>
-
-    <div class="actions">
-      <button id="save" class="btn primary">Save picks</button>
-      <button id="reset" class="btn ghost">Reset</button>
-      <a href="index.html" class="btn ghost" style="display:inline-flex;align-items:center">← Back</a>
-    </div>
-
-    <div class="note">This demo seeds a leaderboard entry when you save picks so you can flip over to the table later.</div>
-
-    <div style="margin-top:14px;font-weight:800">Sticker album</div>
-    <div class="album-row" id="album"></div>
-  </div>
-</main>
-
-<footer style="max-width:1100px;margin:18px auto;padding:10px 16px;color:var(--muted);text-align:center">RetroJoy — WORLD CUP 2026 • White primary with blue & red trim</footer>
-
-<script>
-  // sample assets
-  const stickers = [
-    {id:'s1',name:'Turbo Tommy',icon:'⚽'},
-    {id:'s2',name:'Giga Gull',icon:'🕊️'},
-    {id:'s3',name:'Brick Wall',icon:'🧤'},
-    {id:'s4',name:'Maestro',icon:'🎛️'},
-    {id:'s5',name:'Tank',icon:'🛡️'},
-    {id:'s6',name:'Quickfoot',icon:'👟'}
-  ];
-  const teams = [
-    {code:'USA',name:'United States',flag:'🇺🇸'},
-    {code:'MEX',name:'Mexico',flag:'🇲🇽'},
-    {code:'ENG',name:'England',flag:'🏴'},
-    {code:'BRA',name:'Brazil',flag:'🇧🇷'},
-    {code:'FRA',name:'France',flag:'🇫🇷'},
-    {code:'ARG',name:'Argentina',flag:'🇦🇷'}
-  ];
-
-  // state persistence
-  let state = {
-    stickers: JSON.parse(localStorage.getItem('rj_stickers')||'[]'),
-    teams: JSON.parse(localStorage.getItem('rj_teams')||'[]'),
-    name: localStorage.getItem('rj_name') || ''
-  };
-
-  function el(tag,cls){const d=document.createElement(tag); if(cls) d.className=cls; return d;}
-
-  function renderStickers(){
-    const wrap = document.getElementById('stickers'); wrap.innerHTML='';
-    stickers.forEach(s=>{
-      const card = el('div','sticker'+(state.stickers.includes(s.id)?' selected':''));
-      card.innerHTML = `<div style="font-size:22px">${s.icon}</div><div style="font-weight:800;margin-top:8px">${s.name}</div>`;
-      card.onclick = ()=> toggleSticker(s.id);
-      wrap.appendChild(card);
-    });
-    renderAlbum();
-  }
-
-  function renderTeams(){
-    const wrap = document.getElementById('teams'); wrap.innerHTML='';
-    teams.forEach(t=>{
-      const card = el('div','team'+(state.teams.includes(t.code)?' selected':''));
-      card.innerHTML = `<div style="font-size:22px">${t.flag}</div><div style="font-weight:800;margin-top:8px">${t.name}</div>`;
-      card.onclick = ()=> toggleTeam(t.code);
-      wrap.appendChild(card);
-    });
-  }
-
-  function toggleSticker(id){
-    if(state.stickers.includes(id)) state.stickers = state.stickers.filter(x=>x!==id);
-    else {
-      if(state.stickers.length>=3){ alert('Max 3 stickers'); return; }
-      state.stickers.push(id);
-    }
-    localStorage.setItem('rj_stickers', JSON.stringify(state.stickers));
-    renderStickers();
-  }
-
-  function toggleTeam(code){
-    if(state.teams.includes(code)) state.teams = state.teams.filter(x=>x!==code);
-    else {
-      if(state.teams.length>=3){ alert('Max 3 teams'); return; }
-      state.teams.push(code);
-    }
-    localStorage.setItem('rj_teams', JSON.stringify(state.teams));
-    renderTeams();
-  }
-
-  function renderAlbum(){
-    const album = document.getElementById('album'); album.innerHTML='';
-    if(state.stickers.length===0){ album.innerHTML = '<div style="color:var(--muted)">No stickers yet</div>'; return; }
-    state.stickers.forEach(id=>{
-      const s = stickers.find(x=>x.id===id);
-      const card = el('div','album-card');
-      card.innerHTML = `<div style="font-size:26px">${s.icon}</div><div style="font-weight:800;margin-top:6px">${s.name}</div>`;
-      album.appendChild(card);
-    });
-  }
-
-  document.getElementById('save').addEventListener('click', ()=>{
-    if(state.stickers.length===0 || state.teams.length===0){ alert('Pick at least one sticker and one team.'); return; }
-    localStorage.setItem('rj_stickers', JSON.stringify(state.stickers));
-    localStorage.setItem('rj_teams', JSON.stringify(state.teams));
-    // seed leaderboard entry demo
-    let lb = JSON.parse(localStorage.getItem('rj_lb')||'[]');
-    const pname = localStorage.getItem('rj_name') || ('Player'+Math.floor(Math.random()*999));
-    if(!lb.find(x=>x.name===pname)){ lb.push({name:pname, points: Math.floor(Math.random()*140)+16}); localStorage.setItem('rj_lb', JSON.stringify(lb)); }
-    alert('Picks saved locally (demo). Switch to table.html to see seeded leaderboard.');
-  });
-
-  document.getElementById('reset').addEventListener('click', ()=>{
-    if(!confirm('Reset picks?')) return;
-    state.stickers=[]; state.teams=[];
-    localStorage.removeItem('rj_stickers'); localStorage.removeItem('rj_teams');
-    renderStickers(); renderTeams();
-  });
-
-  // initial render
-  renderStickers(); renderTeams();
-  renderAlbum();
-</script>
 </body>
 </html>
