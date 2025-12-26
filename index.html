@@ -1,0 +1,188 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOALSTORM! World Cup 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES (Based on Style Guide) --- */
+        :root {
+            --bg-color: #050505;         /* Arcade Black */
+            --text-color: #F0F0F0;       /* Scoreboard White */
+            
+            /* Gradient Colors */
+            --orange-top: #FF8533;
+            --orange-mid: #E04010;
+            --retro-blue: #2B65EC;
+            --neon-green: #44D62C;
+        }
+
+        /* --- GENERAL RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'VT323', monospace; /* Default body font */
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            image-rendering: pixelated; 
+        }
+
+        /* --- LAYOUT CONTAINER --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- HEADER (The Image) --- */
+        header.main-header {
+            padding: 2rem 0 1rem 0;
+            border-bottom: 4px solid var(--retro-blue);
+            margin-bottom: 2rem;
+        }
+
+        .header-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- NAVIGATION (Arcade Buttons) --- */
+        nav.arcade-nav {
+            margin-bottom: 3rem;
+        }
+
+        nav.arcade-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav.arcade-nav li a {
+            font-family: 'Press Start 2P', cursive;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: var(--text-color);
+            
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            background-color: #1a1a1a;
+            border: 4px solid var(--retro-blue);
+            
+            box-shadow: 6px 6px 0px #000000, 6px 6px 0px 4px var(--retro-blue);
+            transition: all 0.1s ease-in-out;
+        }
+
+        nav.arcade-nav li a:hover {
+            background-color: var(--orange-mid);
+            border-color: var(--orange-top);
+            color: #000;
+            
+            transform: translateY(4px) translateX(4px);
+            box-shadow: 2px 2px 0px #000000, 2px 2px 0px 2px var(--orange-top);
+        }
+        
+        nav.arcade-nav li a:active {
+            transform: translateY(6px) translateX(6px);
+            box-shadow: 0px 0px 0px var(--orange-top);
+        }
+
+        /* --- MAIN CONTENT (Placeholder) --- */
+        main.content-placeholder {
+            flex: 1;
+            font-size: 1.5rem;
+            padding: 2rem;
+            border: 4px dashed var(--neon-green);
+        }
+
+        main h2 {
+            font-family: 'Press Start 2P';
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer.main-footer {
+            padding: 2rem 0;
+            margin-top: auto;
+            border-top: 2px solid #333;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            border-bottom: 2px dotted #888;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--neon-green);
+            border-color: var(--neon-green);
+        }
+
+        /* Mobile Tweak for Nav */
+        @media (max-width: 600px) {
+            nav.arcade-nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav.arcade-nav li a {
+                display: block;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="main-header">
+            <img src="image_2.png" alt="GOALSTORM! WORLD CUP 2026 Logo" class="header-image">
+        </header>
+
+        <nav class="arcade-nav">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#play">PLAY</a></li>
+                <li><a href="#scores">SCORES</a></li>
+                <li><a href="#rules">RULES</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-placeholder">
+            <h2>INSERT COIN TO START</h2>
+            <p>Ready to dominate the pitch? Select PLAY to begin your tournament run!</p>
+        </main>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2026 Retro Sports League. All rights reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
+```
